@@ -1,19 +1,26 @@
-tabela Composite pattern
-Overview
-The "tabela Composite pattern" project is a React application that provides a user interface for viewing and interacting with a table of car data. It includes both desktop and mobile versions to ensure a responsive design.
+# Tabela pattern composition
 
-Table Component
-Desktop Version
-The desktop version of the table is implemented in the Table component. It displays car information such as name, next reservation date, status, and rating. Each row has a button to trigger a dropdown menu with additional options. Users can also click on a car image to expand it and mark it as selected.
+O projeto **Tabela pattern composition** é uma aplicação React que oferece uma interface de usuário para visualizar e interagir com uma tabela de dados de carros. Ele inclui versões para desktop e mobile para garantir um design responsivo.
 
-Dependencies
-React
-Next.js
-react-rating-stars-component
-Font Awesome
-Usage
-jsx
-Copy code
+## Componente de Tabela
+
+### Versão Desktop
+
+A versão desktop da tabela é implementada no componente `Table`. Ele exibe informações sobre carros, como nome, próxima data de reserva, status e avaliação. Cada linha possui um botão para acionar um menu suspenso com opções adicionais. Os usuários também podem clicar na imagem de um carro para expandi-la e marcá-la como selecionada.
+
+#### Dependências
+
+- React
+- Next.js
+- TypeScript
+- Vercel
+- node 18.17.0 ou superior
+- react-rating-stars-component
+- Font Awesome
+
+#### Uso
+
+```jsx
 import Table from '../components/table/Table'
 
 export default function Home() {
@@ -23,36 +30,38 @@ export default function Home() {
     </main>
   );
 }
-Mobile Version
-The mobile version of the table is implemented in the MobileTableItem component. It presents a simplified view of the car data, allowing users to view the car image, name, next reservation date, and rating. The dropdown menu with additional options is accessible through a button.
+````
+## Versão Mobile
 
-Dependencies
-React
-Next.js
-react-rating-stars-component
-Font Awesome
-Usage
-jsx
-Copy code
+A versão mobile da tabela é implementada no componente `MobileTableItem`. Ele apresenta uma visualização simplificada dos dados do carro, permitindo que os usuários vejam a imagem do carro, nome, próxima data de reserva e avaliação. O menu suspenso com opções adicionais é acessível por meio de um botão.
+
+#### Uso
+
+```jsx
 import MobileTableItem from '../components/table/TableMobile'
 
-// Inside your component
+// Dentro do seu componente
 {TableData.map((item, index) => (
   <MobileTableItem key={index} item={item} index={undefined} />
 ))}
-Data
-The sample data for the table is stored in the TableData module. It includes information such as car images, names, next reservation dates, statuses, ratings, and actions.
+````
+## Dados
 
-Usage
-jsx
-Copy code
+Os dados de exemplo para a tabela estão armazenados no módulo `TableData`. Isso inclui informações como imagens de carros, nomes, próximas datas de reserva, status, avaliações e ações.
+
+#### Uso
+
+```jsx
 import CarImage from '../../../public/assets/img/mini-cooper.jpg';
 import TableData from '../../components/data/data';
 
-// Sample usage of the data
+// Exemplo de uso dos dados
 const firstCar = TableData[0];
 console.log(firstCar.name); // Mini Cooper 2020
-Getting Started
-Clone the repository.
-Install dependencies using npm install.
-Run the application with npm run dev.
+````
+
+## Como Começar
+
+1. Clone o repositório.
+2. Instale as dependências usando `npm install`.
+3. Execute a aplicação com `npm run dev`.
